@@ -1,0 +1,106 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Swagger with Laravel",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/index": {
+            "get": {
+                "summary": "All Games Details",
+                "operationId": "29f655ad8a73315848cd8db3c71210c5",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "404": {
+                        "description": "Not found"
+                    }
+                }
+            }
+        },
+        "/api/store": {
+            "post": {
+                "summary": "Register a new Game",
+                "operationId": "9eb16992822bba3d4643d29f5da8adb1",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "User's name",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "age",
+                        "in": "query",
+                        "description": "User's age",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Game registered successfully"
+                    }
+                }
+            }
+        },
+        "/api/proposeCombination": {
+            "get": {
+                "summary": "Evaluate the Propose Combination",
+                "operationId": "d7dfa51dc65bd16468cc6ad4df9e5056",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "404": {
+                        "description": "Not found"
+                    },
+                    "400": {
+                        "description": "General Request Error"
+                    }
+                }
+            }
+        },
+        "/api/show": {
+            "get": {
+                "summary": "Get the specified Game Details",
+                "operationId": "4a3150430d7951a67f2bba2ab5c4fe61",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "404": {
+                        "description": "Game not found"
+                    }
+                }
+            }
+        },
+        "/api/destroy": {
+            "delete": {
+                "summary": "Remove the specified resource from storage",
+                "operationId": "818b460770f22ff2647e8f649c2d5474",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "404": {
+                        "description": "Not found"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "bearerFormat": "JWT",
+                "scheme": "bearer"
+            }
+        }
+    }
+}
